@@ -1,6 +1,6 @@
 # messinian_db
 
-Summary statistics for the publication _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_
+Summary statistics for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_
 
 Project webpage: [REMARE project](https://sites.google.com/view/kagiadi/projects/remare)
 
@@ -24,9 +24,9 @@ Apache 2.0, see LICENSE file for full text.
 
 ## Requirements
 
-Base R and the RStudio IDE.
+Base R (version >= 4.0) and the RStudio IDE.
 
-## Reproducing Results
+## Reproduction
 
 In the RStudio IDE, open the file _messinian_db.Rproj_. This opens the RProject of the same name. Then, run
 
@@ -34,7 +34,13 @@ In the RStudio IDE, open the file _messinian_db.Rproj_. This opens the RProject 
 source("code/make_table.R")
 ```
 
-to produce the summary statistics of the database (stored in the variable `table`).
+in the consile to produce the summary statistics of the database (stored in the variable `table`). You can view the values by running
+
+```R
+table
+```
+
+in the console.  
 
 ## Funding
 
