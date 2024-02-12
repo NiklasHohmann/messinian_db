@@ -1,6 +1,7 @@
 #### Load data ####
 messinian_db <- read.csv(file = "data/messinianDB.csv")
 
+## Merge species names
 sp_names = paste(messinian_db$Genus.name, messinian_db$Species.name, sep = " ")
 sp_names = replace(sp_names, messinian_db$Genus.name == "indet.", NA)
 sp_names = replace(sp_names, messinian_db$Species.name == "sp.", NA)
@@ -58,7 +59,7 @@ for (group in group_names) {
 }
 table["total", "species"] <- length(unique(messinian_db$full_sp_name[!is.na(messinian_db$full_sp_name)] ))
 table["total", "genera"] <- length(unique(messinian_db$Genus.name [messinian_db$Genus.name != "indet."]))
-table["total", "families"] <- length(unique(messinian_db$Family))
+table["total", "families"] <- length(unique(messinian_db$Family[messinian_db$Family != "indet"]))
 
 #### Show table ####
 table
