@@ -3,7 +3,6 @@ messinian_db <- read.csv(file = "data/messinianDB.csv")
 
 ## Merge species names
 sp_names = paste(messinian_db$Genus.name, messinian_db$Species.name, sep = " ")
-sp_names = replace(sp_names, messinian_db$Genus.name == "indet.", NA)
 sp_names = replace(sp_names, messinian_db$Species.name == "sp.", NA)
 messinian_db$full_sp_name = sp_names
 
@@ -34,10 +33,10 @@ for (group in group_names) {
   table[group, "occ_wMed"] <- length(messinian_db$ID[messinian_db$group.name == group & messinian_db$region.new == "Western Mediterranean"])
   table[group, "occ_PoA"] <- length(messinian_db$ID[messinian_db$group.name == group & messinian_db$region.new == "Po Plain-Northern Adriatic"])
 }
-table["total", "occ_all"] <- length(messinian_db$ID)
-table["total", "occ_eMed"] <- length(messinian_db$ID[messinian_db$region.new == "Eastern Mediterranean"])
-table["total", "occ_wMed"] <- length(messinian_db$ID[messinian_db$region.new == "Western Mediterranean"])
-table["total", "occ_PoA"] <- length(messinian_db$ID[messinian_db$region.new == "Po Plain-Northern Adriatic"])
+table["total", "occ_all"] <- sum(table[group_names, "occ_all"])
+table["total", "occ_eMed"] <- sum(table[group_names, "occ_eMed"])
+table["total", "occ_wMed"] <- sum(table[group_names, "occ_wMed"])
+table["total", "occ_PoA"] <- sum(table[group_names, "occ_PoA"])
 
 #### Localities ####
 for (group in group_names) {
@@ -55,11 +54,11 @@ table["total", "loc_PoA"] <- length(unique(messinian_db$Locality[messinian_db$re
 for (group in group_names) {
   table[group, "species"] <- length(unique(messinian_db$full_sp_name[messinian_db$group.name == group & !is.na(messinian_db$full_sp_name)] ))
   table[group, "genera"] <- length(unique(messinian_db$Genus.name[messinian_db$group.name == group & (messinian_db$Genus.name != "indet.")]))
-  table[group, "families"] <- length(unique(messinian_db$Family[messinian_db$group.name == group]))
+  table[group, "families"] <- length(unique(messinian_db$Family[ (messinian_db$group.name == group) & (messinian_db$Family != "indet")]))
 }
-table["total", "species"] <- length(unique(messinian_db$full_sp_name[!is.na(messinian_db$full_sp_name)] ))
-table["total", "genera"] <- length(unique(messinian_db$Genus.name [messinian_db$Genus.name != "indet."]))
-table["total", "families"] <- length(unique(messinian_db$Family[messinian_db$Family != "indet"]))
+table["total", "species"] <- sum(table[group_names,"species"])
+table["total", "genera"] <- sum(table[group_names,"genera"]) 
+table["total", "families"] <- sum(table[group_names,"families"])
 
 #### Show table ####
 table
