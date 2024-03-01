@@ -1,7 +1,4 @@
-
-#"The coordinates of the fossiliferous localities used in this study were obtained from the original publications, whenever possible. When the exact coordinates for a locality had not been published or when the locality was too vague (e.g. Libya), we included approximate coordinates based on the description of the locality in the original publication."
-
-# Maps of localities - Agiadi et al. MSC
+# Maps of localities - Agiadi et al. "A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"
 
 # 21.02.2024
 # Author: K. Agiadi
@@ -18,7 +15,7 @@ library(ggplot2)
 # To setup the bbox margins, go to OpenStreetMap, find the view you want and click export
 
 bbox=c(left=-7.4,bottom=28.5,right=40,top=47.1)
-Med_map<-get_stadiamap(bbox,maptype="stamen_toner_lite",zoom=5)  
+Med_map<-get_stadiamap(bbox,maptype="stamen_toner_background",zoom=5)  
 ggmap(Med_map)
 
 # Read locality data
@@ -42,3 +39,13 @@ eMed<-filter(coord,region=="Eastern Mediterranean")
 PoA<-filter(coord,region=="Po Plain-Northern Adriatic")
 ggmap(Med_map)+geom_point(data=wMed,color="green4")+geom_point(data=eMed,color="pink4")+geom_point(data=PoA,color="orange3")
 ggsave("locs_by_region_map.pdf",width=9,height=5)
+
+# Color by stage and region
+ggmap(Med_map)+
+  geom_point(data=wMed,color="turquoise4",aes(shape=Age))+
+  geom_point(data=eMed,color="firebrick2",aes(shape=Age))+
+  geom_point(data=PoA,color="gold1",aes(shape=Age))+
+  labs(x="longitude",y="latitude")+
+  theme(legend.position="bottom")
+
+ggsave("stage_region_map2.pdf",width=9,height=5)
