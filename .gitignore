@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# don't track csv files
+*.csv
