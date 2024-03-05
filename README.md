@@ -1,12 +1,12 @@
 # messinian_db
 
-Summary statistics for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_
+Summary statistics and maps for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_
 
 Project webpage: [REMARE project](https://sites.google.com/view/kagiadi/projects/remare)
 
 ## Authors
 
-__Niklas Hohmann__  (creator and maintainer of repository)
+__Niklas Hohmann__  (maintainer)  
 Utrecht University  
 email: n.h.hohmann [at] uu.nl  
 Web page: [www.uu.nl/staff/NHohmann](https://www.uu.nl/staff/NHHohmann)  
@@ -28,19 +28,46 @@ Base R (version >= 4.0) and the RStudio IDE.
 
 ## Reproduction
 
-In the RStudio IDE, open the file _messinian_db.Rproj_. This opens the RProject of the same name. Then, run
+In the RStudio IDE, open the file _messinian_db.Rproj_. This opens the RProject of the same name, and should automatically install the `renv` package (if not already installed). First, run
+
+```R
+renv::restore()
+```
+
+to install all required packages and their dependencies. Then run
+
+```R
+source("code/download_data.R")
+````
+
+to download the latest version of the database from Zenodo. Then, run
 
 ```R
 source("code/make_table.R")
 ```
 
-in the consile to produce the summary statistics of the database (stored in the variable `table`). You can view the values by running
+in the console to produce the summary statistics of the database (stored in the variable `table`). You can view the values by running
 
 ```R
 table
 ```
 
-in the console.  
+in the console. Details on producing the map are given in the file `code/make_maps.R`.
+
+## Repository structure 
+
+* _code_ : folder with R code
+  * _make_table.R_ : script to generate table 1
+  * _make_maps.R_ : script to generate the maps
+  * _download_data.R_ : script to download data from Zenodo
+* _data_ : folder for raw data. Initially empty, will be filled with downloaded data after the script in `code/download_data` is run.
+* _figs_ : folder for figures. Initially empty
+* _renv_ : folder used by the `renv` package
+* _.gitignore_ : untracked files
+* _.Rprofile_ : session info
+* _messinian_db.Rproj_ : RProject file
+* _README_ : README file
+* _renv.lock_ : lock file for `renv` package
 
 ## Funding
 
