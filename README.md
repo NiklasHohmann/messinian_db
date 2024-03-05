@@ -6,13 +6,19 @@ Project webpage: [REMARE project](https://sites.google.com/view/kagiadi/projects
 
 ## Authors
 
-__Niklas Hohmann__  (maintainer)  
+__Niklas Hohmann__  (maintainer, contributor)  
 Utrecht University  
 email: n.h.hohmann [at] uu.nl  
 Web page: [www.uu.nl/staff/NHohmann](https://www.uu.nl/staff/NHHohmann)  
 ORCID: [0000-0003-1559-1838](https://orcid.org/0000-0003-1559-1838)
 
-__Konstantina Agiadi__ (principal investigator)  
+__Daniel García-Castellanos__ (contributor)  
+Geociencias Barcelona  
+email: danielgc [at] geo3bcn.csic.es  
+Web page: [digital.csic.es/cris/rp/rp07103](https://digital.csic.es/cris/rp/rp07103)  
+ORCID: [0000-0001-8454-8572](https://orcid.org/0000-0001-8454-8572)
+
+__Konstantina Agiadi__ (principal investigator, contributor)  
 University of Vienna  
 email: konstantina.agiadi [at] univie.ac.at  
 Web page: [sites.google.com/view/kagiadi](https://sites.google.com/view/kagiadi)  
@@ -54,7 +60,7 @@ table
 
 in the console. Details on producing the map are given in the file `code/make_maps.R`.
 
-## Repository structure 
+## Repository structure  
 
 * _code_ : folder with R code
   * _make_table.R_ : script to generate table 1
