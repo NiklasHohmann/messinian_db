@@ -1,6 +1,8 @@
 # messinian_db
 
-Summary statistics and maps for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10782803.svg)](https://doi.org/10.5281/zenodo.10782803)
+
+Supplementary code for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_. Generates summary statistics and maps.
 
 Project webpage: [REMARE project](https://sites.google.com/view/kagiadi/projects/remare)
 
