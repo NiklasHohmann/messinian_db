@@ -62,3 +62,5 @@ table["total", "families"] <- sum(table[group_names,"families"])
 
 #### Show table ####
 table
+
+cat("Table successfully generated!\n")
