@@ -1,6 +1,8 @@
 # messinian_db
 
-Summary statistics and maps for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10782803.svg)](https://doi.org/10.5281/zenodo.10782803)
+
+Supplementary code for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_. Generates summary statistics and maps.
 
 Project webpage: [REMARE project](https://sites.google.com/view/kagiadi/projects/remare)
 
@@ -77,4 +79,4 @@ in the console. Details on producing the map are given in the file `code/make_ma
 
 ## Funding
 
-This work was supported by the Austrian Science Fund (FWF) project “Late Miocene Mediterranean Marine Ecosystem Crisis” (2022–2026), Grant DOI 10.55776/V986 (PI: K.Agiadi)."  
+This work was supported by the Austrian Science Fund (FWF) project “Late Miocene Mediterranean Marine Ecosystem Crisis” (2022–2026), Project no. V 986, [DOI 10.55776/V986](https://www.doi.org/10.55776/V986) (PI: K.Agiadi). 
