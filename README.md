@@ -77,4 +77,4 @@ in the console. Details on producing the map are given in the file `code/make_ma
 
 ## Funding
 
-This work was supported by the Austrian Science Fund (FWF) project “Late Miocene Mediterranean Marine Ecosystem Crisis” (2022–2026), Grant DOI 10.55776/V986 (PI: K.Agiadi)."  
+This work was supported by the Austrian Science Fund (FWF) project “Late Miocene Mediterranean Marine Ecosystem Crisis” (2022–2026), Project no. V 986, [DOI 10.55776/V986](https://www.doi.org/10.55776/V986) (PI: K.Agiadi)."  
