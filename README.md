@@ -68,7 +68,7 @@ in the console. Details on producing the map are given in the file `code/make_ma
   * _make_table.R_ : script to generate table 1
   * _make_maps.R_ : script to generate the maps
   * _download_data.R_ : script to download data from Zenodo
-* _data_ : folder for raw data. Initially empty, will be filled with downloaded data after the script in `code/download_data` is run.
+* _data_ : folder for raw data. Initially empty, will be filled with downloaded data after the script in `code/download_data.R` is run.
 * _figs_ : folder for figures. Initially empty
 * _renv_ : folder used by the `renv` package
 * _.gitignore_ : untracked files
