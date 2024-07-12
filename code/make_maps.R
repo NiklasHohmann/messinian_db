@@ -113,12 +113,12 @@ ggsave("othermolluscs.pdf",width=9,height=5)
 
 # plot groups split into plankton, benthos, necton and large marine vertebrates
 # plankton: planktic_foraminifera, nanoplankton, dinocysts
-# benthos: benthic_foraminifera, bryozoans, molluscs, echinoids, corals
-# necton: fish, ostracods 
+# benthos: benthic_foraminifera, ostracods, bryozoans, molluscs, echinoids, corals
+# necton: fish 
 # large marine vertebrates: sharks, marine mammals
 plankton<-rbind(pforams,nano,dino)
-benthos<-rbind(bforams,bryo,othermolluscs,gastr,biv,echinoids,corals)
-necton<-rbind(fish,ostracods)
+benthos<-rbind(bforams,ostracods,bryo,othermolluscs,gastr,biv,echinoids,corals)
+necton<-rbind(fish)
 large_mar_vert<-rbind(sharks,mmammals)
 
 ggmap(Med_map)+geom_point(data=plankton,color="gold1",aes(shape=Age))+geom_point(data=benthos,color="red",aes(shape=Age))+geom_point(data=necton,color="blue",aes(shape=Age))+geom_point(data=large_mar_vert,color="green",aes(shape=Age))
