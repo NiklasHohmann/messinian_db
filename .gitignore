@@ -5,3 +5,4 @@
 
 # don't track csv files
 *.csv
+*.pdf
