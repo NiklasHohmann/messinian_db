@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10782803.svg)](https://doi.org/10.5281/zenodo.10782803)
 
-Supplementary code for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_. Generates summary statistics and maps.
+Supplementary code for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_ (Agiadi et al 2024, [DOI: 10.5194/essd-2024-75](https://doi.org/10.5194/essd-2024-75)). Generates summary statistics, figures, and maps.
 
 Project webpage: [REMARE project](https://sites.google.com/view/kagiadi/projects/remare)
 
@@ -51,7 +51,7 @@ source("code/download_data.R")
 to download the latest version of the database from Zenodo. Then, run
 
 ```R
-source("code/make_table.R")
+source("code/make_table_and_plots.R")
 ```
 
 in the console to produce the summary statistics of the database (stored in the variable `table`). You can view the values by running
@@ -60,12 +60,12 @@ in the console to produce the summary statistics of the database (stored in the 
 table
 ```
 
-in the console. Details on producing the map are given in the file `code/make_maps.R`.
+in the console, and inspect the figures in `figs/`. Details on producing the map are given in the file `code/make_maps.R`.
 
 ## Repository structure  
 
 * _code_ : folder with R code
-  * _make_table.R_ : script to generate table 1
+  * _make_table_and_plots.R_ : script to generate table 1 and figures
   * _make_maps.R_ : script to generate the maps
   * _download_data.R_ : script to download data from Zenodo
 * _data_ : folder for raw data. Initially empty, will be filled with downloaded data after the script in `code/download_data` is run.
@@ -76,6 +76,13 @@ in the console. Details on producing the map are given in the file `code/make_ma
 * _messinian_db.Rproj_ : RProject file
 * _README_ : README file
 * _renv.lock_ : lock file for `renv` package
+
+## References
+
+This repository downloads and uses data from
+
+* Agiadi, K., Hohmann, N., Gliozzi, E., Thivaiou, D., Francesca, B., Taviani, M., Bianucci, G., Collareta, A., Londeix, L., Faranda, C., Bulian, F., Koskeridou, E., Lozar, F., Mancini, A. M., Dominici, S., Moissette, P., Bajo Campos, I., Borghi, E., Iliopoulos, G., … Garcia-Castellanos, D. (2024). Revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13358435
+
 
 ## Funding
 

@@ -67,28 +67,37 @@ cat("Table successfully generated!\n")
 
 #### make plots ####
 library(ggplot2)
+cat("Creating plots\n")
 ## plot occurrences
-df = messinian_db
-ggplot(df, aes( x = group.name, fill = region.new)) +
-  geom_bar(position = "dodge") +
-  xlab("Group") +
-  ylab("No. occurrences") +
-  theme(axis.text.x = element_text(angle = 90))
-ggsave("figs/occ.pdf")
-
-ggplot(df, aes( x = group.name , group = Locality,  y = Locality, fill = region.new, )) +
-  geom_bar(position = "dodge") +
-  xlab("Group") +
-  ylab("No. occurrences") +
-  theme(axis.text.x = element_text(angle = 90))
-
-df = data.frame(group = rep(group_names, each = 3),
-                regions = rep(regions, length(group_names)),
-                nloc = rep(NA, length(regions) * length(group_names)))
-for (i in seq_len(nrow(df))){
-  df[i, "nloc"] = length(unique(messinian_db$Locality[messinian_db$group.name == df$group[i] & messinian_db$region.new == df$regions[i]]))
+make_occ_plot = function(file_name){
+  df = data.frame(group = rep(group_names, each = 3),
+                  regions = rep(regions, length(group_names)),
+                  nocc = rep(NA, length(regions) * length(group_names)))
+  for (i in seq_len(nrow(df))){
+    df[i, "nocc"] = length(unique(messinian_db$ID[messinian_db$group.name == df$group[i] & messinian_db$region.new == df$regions[i]]))
+  }
+  ggplot(df, aes(x = group, fill = regions, y = nocc)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    theme_classic()
+  ggsave(file_name)
 }
+make_occ_plot("figs/occ.pdf")
 
-ggplot(df, aes(x = group, y = nloc, fill = regions)) +
-  geom_bar(position = position_dodge(), stat = "identity")
-ggsave("figs/locs.pdf")
+make_loc_plot = function(file_name){
+  df = data.frame(group = rep(group_names, each = 3),
+                  regions = rep(regions, length(group_names)),
+                  nloc = rep(NA, length(regions) * length(group_names)))
+  for (i in seq_len(nrow(df))){
+    df[i, "nloc"] = length(unique(messinian_db$Locality[messinian_db$group.name == df$group[i] & messinian_db$region.new == df$regions[i]]))
+  }
+  
+  ggplot(df, aes(x = group, y = nloc, fill = regions)) +
+    geom_bar(position = position_dodge(), stat = "identity") +
+    theme_classic()
+  ggsave(file_name)
+}
+make_loc_plot("figs/locs.pdf")
+
+
+
+cat("Plots are in figs/ \n")
