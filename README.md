@@ -1,6 +1,6 @@
 # messinian_db
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10782803.svg)](https://doi.org/10.5281/zenodo.10782803)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13358742.svg)](https://doi.org/10.5281/zenodo.13358742)
 
 Supplementary code for _"A revised marine fossil record of the Mediterranean before and after the Messinian Salinity Crisis"_ (Agiadi et al 2024, [DOI: 10.5194/essd-2024-75](https://doi.org/10.5194/essd-2024-75)). Generates summary statistics, figures, and maps.
 
